@@ -2,9 +2,9 @@
 Contributors: helpscout, sproutapps, dancameron, elanasparkle, avonville1, jamesros161
 Tags: support, documentation, helpdesk, contact form help desk
 Requires at least: 4.5
-Tested up to: 6.7
-Stable tag: 6.5.6
-Release 6.5.6
+Tested up to: 6.8
+Stable tag: 6.5.7
+Release 6.5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,6 +54,9 @@ Beacon is included on all Free plans, so you can embed your Beacon using this pl
 First Release
 
 == Changelog ==
+
+= 6.5.7 =
+* **Fix:** Vulnerability fix [#25](https://github.com/BoldGrid/help-scout/issues/25)
 
 = 6.5.6 =
 * **Fix:** Fixes beacon script not loading [#60](https://github.com/BoldGrid/help-scout-desk/issues/60)
