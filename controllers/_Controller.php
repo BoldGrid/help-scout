@@ -22,6 +22,8 @@ abstract class HSD_Controller extends HelpScout_Desk {
 			add_action( 'hsd_plugin_activation_hook', array( __CLASS__, 'helpscout_desks_activated' ) );
 		}
 
+		self::disable_jit_notices();
+
 		// Register Shortcodes
 		add_action( 'hsd_shortcode', array( __CLASS__, 'register_shortcode' ), 0, 3 );
 		// Add shortcodes
@@ -38,6 +40,26 @@ abstract class HSD_Controller extends HelpScout_Desk {
 		add_action( 'init', array( __CLASS__, 'set_schedule' ), 10, 0 );
 
 		add_filter( 'admin_footer_text', array( __CLASS__, 'please_rate_hs' ), 1, 2 );
+	}
+
+	/**
+	 * Disable JIT Notices
+	 *
+	 * @since 1.6.17
+	 */
+	public static function disable_jit_notices() {
+		add_filter(
+			'doing_it_wrong_trigger_error',
+			function ( $doing_it_wrong, $function_name, $message ) {
+				// if the function is _load_textdomain_just_in_time, return false to prevent the error.
+				if ( '_load_textdomain_just_in_time' === $function_name && false !== strpos( $message, 'help-scout' ) ) {
+					return false;
+				}
+				return $doing_it_wrong;
+			},
+			10,
+			4
+		);
 	}
 
 	public static function please_rate_hs( $footer_text ) {
