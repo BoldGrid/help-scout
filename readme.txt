@@ -2,7 +2,7 @@
 Contributors: helpscout, sproutapps, dancameron, elanasparkle, avonville1, jamesros161
 Tags: support, documentation, helpdesk, contact form help desk
 Requires at least: 4.5
-Tested up to: 6.8
+Tested up to: 6.9
 Stable tag: 6.5.7
 Release 6.5.7
 License: GPLv2 or later
